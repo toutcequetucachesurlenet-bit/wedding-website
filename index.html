@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Victoria & Alexander — The Wedding</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Exo:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="header" id="header">
+    <div class="nav-container">
+      <a href="#home" class="logo">V & A</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav-menu" id="navMenu">
+        <ul>
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#story" class="nav-link">Our Story</a></li>
+          <li><a href="#schedule" class="nav-link">Schedule</a></li>
+          <li><a href="#venue" class="nav-link">Venue</a></li>
+          <li><a href="#party" class="nav-link">Wedding Party</a></li>
+          <li><a href="#dress-code" class="nav-link">Dress Code</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#registry" class="nav-link">Registry</a></li>
+          <li><a href="#faqs" class="nav-link">FAQs</a></li>
+          <li><a href="#rsvp" class="nav-link btn-nav-rsvp">RSVP</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main id="main-content">
+
+    <!-- PAGE 1: HOME -->
+    <section id="home" class="page-view active">
+      <div class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="subtitle">Together with their families</p>
+          <h1 class="script-title">Victoria & Alexander</h1>
+          <p class="wedding-details">REQUEST THE HONOUR OF YOUR PRESENCE</p>
+          <p class="wedding-date-location">SEPTEMBER 18, 2027 &bull; LAKE COMO, ITALY</p>
+          
+          <!-- Countdown Timer -->
+          <div class="countdown" id="countdown">
+            <div class="time-block"><span id="days">00</span><label>Days</label></div>
+            <div class="time-block"><span id="hours">00</span><label>Hours</label></div>
+            <div class="time-block"><span id="minutes">00</span><label>Mins</label></div>
+            <div class="time-block"><span id="seconds">00</span><label>Secs</label></div>
+          </div>
+
+          <a href="#rsvp" class="btn btn-primary">RSVP Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 2: OUR STORY -->
+    <section id="story" class="page-view">
+      <div class="container">
+        <h2 class="section-title script-header">Our Journey</h2>
+        <p class="section-subtitle">How our love story unfolded over the years</p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-media">
+              <!-- EDITABLE PHOTO: Replace src below with your image path -->
+              <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=800" alt="First Meeting" class="img-responsive">
+            </div>
+            <div class="timeline-content">
+              <span class="timeline-date">Autumn 2021</span>
+              <h3>The First Encounter</h3>
+              <p>A chance meeting at an art gallery opening in Paris led to an evening of endless conversation, shared coffee, and a quiet realization that something extraordinary had begun.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item alt">
+            <div class="timeline-media">
+              <!-- EDITABLE PHOTO: Replace src below with your image path -->
+              <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&q=80&w=800" alt="First Trip Together" class="img-responsive">
+            </div>
+            <div class="timeline-content">
+              <span class="timeline-date">Summer 2023</span>
+              <h3>The Great Adventure</h3>
+              <p>From exploring coastal villages to getting lost in old European libraries, traveling together solidified our bond and deepened our commitment to a shared future.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-media">
+              <!-- EDITABLE PHOTO: Replace src below with your image path -->
+              <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=800" alt="The Proposal" class="img-responsive">
+            </div>
+            <div class="timeline-content">
+              <span class="timeline-date">Winter 2025</span>
+              <h3>The Proposal</h3>
+              <p>Under a snow-dusted canopy in the Alps, Alexander asked the question Victoria had always dreamed of answering. Surrounded by candlelight, she said yes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 3: SCHEDULE OF EVENTS -->
+    <section id="schedule" class="page-view">
+      <div class="container">
+        <h2 class="section-title script-header">Schedule of Events</h2>
+        <p class="section-subtitle">A weekend celebration of love and togetherness</p>
+
+        <div class="schedule-grid">
+          <div class="schedule-card">
+            <span class="day-badge">Friday, Sept 17</span>
+            <h3>Welcome Cocktails</h3>
+            <p class="time">6:00 PM – 9:00 PM</p>
+            <p class="location">Villa d'Este Gardens</p>
+            <p class="desc">Join us for light bites, spritzes, and a warm welcome overlooking the lake.</p>
+          </div>
+
+          <div class="schedule-card highlight">
+            <span class="day-badge">Saturday, Sept 18</span>
+            <h3>The Wedding Ceremony</h3>
+            <p class="time">4:00 PM – 5:00 PM</p>
+            <p class="location">Terrace of Villa Balbianello</p>
+            <p class="desc">Please arrive 30 minutes early. Seating will close promptly at 3:45 PM.</p>
+          </div>
+
+          <div class="schedule-card">
+            <span class="day-badge">Saturday, Sept 18</span>
+            <h3>Reception & Dinner</h3>
+            <p class="time">6:30 PM – Midnight</p>
+            <p class="location">Grand Ballroom</p>
+            <p class="desc">A multi-course formal Italian banquet followed by music, dancing, and toasts.</p>
+          </div>
+
+          <div class="schedule-card">
+            <span class="day-badge">Sunday, Sept 19</span>
+            <h3>Farewell Brunch</h3>
+            <p class="time">10:30 AM – 1:00 PM</p>
+            <p class="location">Lakefront Veranda</p>
+            <p class="desc">Relaxed morning pastries, espresso, and champagne before departures.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 4: VENUE & ACCOMMODATIONS -->
+    <section id="venue" class="page-view">
+      <div class="container">
+        <h2 class="section-title script-header">Venue & Accommodations</h2>
+        <p class="section-subtitle">Lake Como, Italy</p>
+
+        <div class="venue-hero">
+          <!-- EDITABLE PHOTO: Replace src below with your image path -->
+          <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&q=80&w=1200" alt="Villa Balbianello" class="img-responsive hero-img">
+          <div class="venue-info">
+            <h3>Villa Balbianello</h3>
+            <p>Via Signal, 22010 Lenno CO, Italy</p>
+            <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn-outline">Open in Google Maps</a>
+          </div>
+        </div>
+
+        <h3 class="subsection-title">Recommended Hotels</h3>
+        <div class="card-grid-3">
+          <div class="hotel-card">
+            <h4>Grand Hotel Tremezzo</h4>
+            <p>Luxury 5-star resort with floating pool and lake views. 10 minutes from venue.</p>
+            <span class="tag">Room Block Available</span>
+          </div>
+          <div class="hotel-card">
+            <h4>Hotel Serbelloni</h4>
+            <p>Historic elegance located in nearby Bellagio. Accessible by ferry.</p>
+            <span class="tag">Boutique</span>
+          </div>
+          <div class="hotel-card">
+            <h4>Villa Flori</h4>
+            <p>Charming contemporary hotel nestled right on the shore.</p>
+            <span class="tag">Recommended</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 5: WEDDING PARTY -->
+    <section id="party" class="page-view">
+      <div class="container">
+        <h2 class="section-title script-header">The Wedding Party</h2>
+        <p class="section-subtitle">Standing by our side on our special day</p>
+
+        <div class="card-grid-4">
+          <div class="party-card">
+            <!-- EDITABLE PHOTO: Replace src below with your image path -->
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600" alt="Maid of Honor">
+            <h4>Sophia Martinez</h4>
+            <span class="role">Maid of Honor</span>
+            <p>Sister of the Bride and lifelong partner in crime.</p>
+          </div>
+          <div class="party-card">
+            <!-- EDITABLE PHOTO: Replace src below with your image path -->
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600" alt="Best Man">
+            <h4>Julian Vance</h4>
+            <span class="role">Best Man</span>
+            <p>Brother of the Groom, artist, and eternal optimist.</p>
+          </div>
+          <div class="party-card">
+            <!-- EDITABLE PHOTO: Replace src below with your image path -->
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=600" alt="Bridesmaid">
+            <h4>Elena Rostova</h4>
+            <span class="role">Bridesmaid</span>
+            <p>Victoria's college roommate and travel companion.</p>
+          </div>
+          <div class="party-card">
+            <!-- EDITABLE PHOTO: Replace src below with your image path -->
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=600" alt="Groomsman">
+            <h4>Marcus Chen</h4>
+            <span class="role">Groomsman</span>
+            <p>Alexander's childhood friend and confidant.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 6: DRESS CODE & THEME -->
+    <section id="dress-code" class="page-view">
+      <div class="container">
+        <h2 class="section-title script-header">Dress Code & Style Guide</h2>
+        <p class="section-subtitle">Black Tie Optional / Formal Elegance</p>
+
+        <div class="dress-code-box">
+          <h3>Attire Guidelines</h3>
+          <p>We kindly request formal evening attire. Gentlemen are encouraged to wear tuxedos or dark suit tailoring with bowties or formal ties. Ladies are invited to wear floor-length gowns or elegant formal cocktail dresses.</p>
+          
+          <div class="color-palette">
+            <h4>Color Inspiration Palette</h4>
+            <div class="swatches">
+              <div class="swatch" style="background: #111111;" title="Black / Onyx"><span>Onyx</span></div>
+              <div class="swatch" style="background: #2C3E50;" title="Midnight Blue"><span>Midnight</span></div>
+              <div class="swatch" style="background: #C5A059;" title="Warm Gold"><span>Champagne</span></div>
+              <div class="swatch" style="background: #8E7970;" title="Taupe"><span>Muted Taupe</span></div>
+              <div class="swatch" style="background: #EAE6DF;" title="Ivory"><span>Soft Ivory</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 7: PHOTO GALLERY -->
+    <section id="gallery" class="page-view">
+      <div class="container">
+        <h2 class="section-title script-header">Captured Moments</h2>
+        <p class="section-subtitle">Highlights from our engagement session</p>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <!-- EDITABLE PHOTO: Replace src below with your image path -->
+            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=800" alt="Gallery 1">
+          </div>
+          <div class="gallery-item">
+            <!-- EDITABLE PHOTO: Replace src below with your image path -->
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800" alt="Gallery 2">
+          </div>
+          <div class="gallery-item">
+            <!-- EDITABLE PHOTO: Replace src below with your image path -->
+            <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&q=80&w=800" alt="Gallery 3">
+          </div>
+          <div class="gallery-item">
+            <!-- EDITABLE PHOTO: Replace src below with your image path -->
+            <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&q=80&w=800" alt="Gallery 4">
+          </div>
+          <div class="gallery-item">
+            <!-- EDITABLE PHOTO: Replace src below with your image path -->
+            <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&q=80&w=800" alt="Gallery 5">
+          </div>
+          <div class="gallery-item">
+            <!-- EDITABLE PHOTO: Replace src below with your image path -->
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=800" alt="Gallery 6">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 8: REGISTRY & GIFTS -->
+    <section id="registry" class="page-view">
+      <div class="container">
+        <h2 class="section-title script-header">Registry & Gifts</h2>
+        <p class="section-subtitle">Your presence is the greatest gift of all</p>
+
+        <div class="registry-content">
+          <p class="registry-intro">Should you wish to honor us with a gift, we have created a honeymoon fund to help build our dream journey to Japan, alongside a small registry of select items.</p>
+
+          <div class="card-grid-2">
+            <div class="registry-card">
+              <h3>Honeymoon Fund</h3>
+              <p>Contribute towards our flights, dining experiences, and adventures in Tokyo and Kyoto.</p>
+              <a href="#" class="btn btn-outline">Contribute Online</a>
+            </div>
+            <div class="registry-card">
+              <h3>Curated Registry</h3>
+              <p>Browse our curated home goods registry hosted at Crate &amp; Barrel.</p>
+              <a href="#" class="btn btn-outline">View Registry</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 9: FAQS -->
+    <section id="faqs" class="page-view">
+      <div class="container">
+        <h2 class="section-title script-header">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Everything you need to know</p>
+
+        <div class="accordion">
+          <div class="faq-item">
+            <button class="faq-question">Are children invited? <span class="icon">+</span></button>
+            <div class="faq-answer">
+              <p>We love your little ones dearly, but our wedding weekend will be an adult-only celebration. We appreciate your understanding and hope you enjoy a relaxing weekend!</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Can I bring a plus one? <span class="icon">+</span></button>
+            <div class="faq-answer">
+              <p>Due to venue capacity restrictions, we are only able to accommodate guests listed explicitly on your invitation. If you have any questions, please reach out directly.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">What is the parking situation at the venue? <span class="icon">+</span></button>
+            <div class="faq-answer">
+              <p>Valet parking will be provided at Villa Balbianello for all guests arriving by vehicle. Shuttle boats will also be available from select partner hotels.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">What is the deadline to RSVP? <span class="icon">+</span></button>
+            <div class="faq-answer">
+              <p>Please respond no later than July 1, 2027, so we may provide finalized counts to our caterers and venue planners.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 10: RSVP PAGE -->
+    <section id="rsvp" class="page-view">
+      <div class="container">
+        <h2 class="section-title script-header">R.S.V.P.</h2>
+        <p class="section-subtitle">Kindly respond by July 1, 2027</p>
+
+        <form class="rsvp-form" id="rsvpForm">
+          <div class="form-group">
+            <label for="fullName">Full Name(s)</label>
+            <input type="text" id="fullName" required placeholder="e.g. Mr. & Mrs. John Smith">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" required placeholder="your.email@example.com">
+          </div>
+
+          <div class="form-group">
+            <label>Will you be attending?</label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="attendance" value="attending" checked> Attending with Joy
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="attendance" value="declining"> Regretfully Decline
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="dietary">Dietary Restrictions or Allergies</label>
+            <textarea id="dietary" rows="3" placeholder="Vegetarian, Gluten-Free, Nut Allergy, etc."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="song">Song Request for the Dance Floor</label>
+            <input type="text" id="song" placeholder="Artist & Song Title">
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full">Submit RSVP</button>
+          <div class="form-message" id="formMessage"></div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p class="script-logo">Victoria &amp; Alexander</p>
+    <p>&copy; 2027 All Rights Reserved &bull; Lake Como, Italy</p>
+  </footer>
+
+  <!-- Script -->
+  <script src="./js/script.js"></script>
+</body>
+</html>
