@@ -1,0 +1,604 @@
+/* ==========================================================================
+   LUXURY DESIGN SYSTEM & VARIABLES
+   ========================================================================== */
+:root {
+  /* Color Palette */
+  --bg-color: #FDFBF7;              /* Warm off-white / cream background */
+  --surface-color: #FFFFFF;         /* Crisp white cards */
+  --text-primary: #1A1A1A;          /* Deep rich charcoal */
+  --text-muted: #555555;            /* Subtle dark gray */
+  --accent-gold: #C5A059;           /* Muted champagne gold */
+  --accent-gold-hover: #A6833E;
+  --border-color: #E8E3DA;          /* Subtle light cream-gold border */
+  
+  /* Typography */
+  --font-body: 'Exo', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-script: 'Alex Brush', cursive;
+
+  /* Transitions & Shadows */
+  --transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+/* Base Resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  font-weight: 300;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Typography Classes */
+.script-title {
+  font-family: var(--font-script);
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  font-weight: 400;
+  color: var(--accent-gold);
+  line-height: 1.1;
+  margin: 0.5rem 0;
+}
+
+.script-header {
+  font-family: var(--font-script);
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  color: var(--accent-gold);
+  font-weight: 400;
+}
+
+.section-title {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 3.5rem;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  border-radius: 0;
+  transition: var(--transition);
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--accent-gold);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-gold-hover);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--text-primary);
+  border-color: var(--accent-gold);
+}
+
+.btn-outline:hover {
+  background-color: var(--accent-gold);
+  color: #ffffff;
+}
+
+/* Router Single-Page Layout logic */
+.page-view {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  min-height: 80vh;
+}
+
+.page-view.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Header & Nav */
+.header {
+  position: sticky;
+  top: 0;
+  background-color: rgba(253, 251, 247, 0.95);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+}
+
+.logo {
+  font-family: var(--font-script);
+  font-size: 2.2rem;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+  gap: 1.8rem;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--accent-gold);
+}
+
+.btn-nav-rsvp {
+  border: 1px solid var(--accent-gold);
+  padding: 0.4rem 1rem;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.nav-toggle span {
+  width: 25px;
+  height: 2px;
+  background-color: var(--text-primary);
+  transition: var(--transition);
+}
+
+/* Home Section */
+.hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1920') center/cover no-repeat;
+  color: #ffffff;
+  padding: 2rem;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.hero-content .script-title {
+  color: #ffffff;
+}
+
+.subtitle {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.85rem;
+}
+
+.wedding-details {
+  letter-spacing: 3px;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.wedding-date-location {
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  color: var(--accent-gold);
+  margin-bottom: 2rem;
+}
+
+/* Countdown */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0 2.5rem;
+}
+
+.time-block {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  padding: 0.8rem 1.2rem;
+  min-width: 75px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.time-block span {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.time-block label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Our Story Timeline */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.timeline-item.alt {
+  direction: rtl;
+}
+
+.timeline-item.alt .timeline-content {
+  direction: ltr;
+}
+
+.timeline-media img {
+  border-radius: 4px;
+  box-shadow: var(--shadow-soft);
+}
+
+.timeline-date {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent-gold);
+}
+
+.timeline-content h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0.5rem 0 1rem;
+}
+
+/* Schedule */
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.schedule-card {
+  background: var(--surface-color);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-soft);
+}
+
+.schedule-card.highlight {
+  border-color: var(--accent-gold);
+  position: relative;
+}
+
+.day-badge {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accent-gold);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.schedule-card .time {
+  font-weight: 500;
+  margin: 0.5rem 0;
+}
+
+.schedule-card .location {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+/* Venue */
+.venue-hero {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.venue-hero img {
+  max-height: 450px;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+}
+
+.card-grid-3, .card-grid-4, .card-grid-2 {
+  display: grid;
+  gap: 2rem;
+}
+
+.card-grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.card-grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.card-grid-4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+
+.hotel-card, .party-card, .registry-card {
+  background: var(--surface-color);
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.hotel-card .tag {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-gold);
+}
+
+/* Wedding Party */
+.party-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 1.2rem;
+  object-fit: cover;
+}
+
+.party-card .role {
+  font-size: 0.8rem;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Dress Code */
+.dress-code-box {
+  background: var(--surface-color);
+  padding: 3rem;
+  border: 1px solid var(--border-color);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.swatches {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.swatch {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.swatch span {
+  display: none;
+}
+
+/* Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.gallery-item img:hover {
+  transform: scale(1.02);
+}
+
+/* FAQs */
+.accordion {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1.5rem 0;
+  text-align: left;
+  font-size: 1.1rem;
+  font-family: var(--font-body);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-answer {
+  display: none;
+  padding-bottom: 1.5rem;
+  color: var(--text-muted);
+}
+
+.faq-item.open .faq-answer {
+  display: block;
+}
+
+/* RSVP Form */
+.rsvp-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--surface-color);
+  padding: 3rem;
+  border: 1px solid var(--border-color);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--border-color);
+  font-family: var(--font-body);
+  background-color: var(--bg-color);
+}
+
+.radio-group {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: none;
+  cursor: pointer;
+}
+
+.btn-full {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.form-message {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--accent-gold);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 3rem 0;
+  border-top: 1px solid var(--border-color);
+  margin-top: auto;
+}
+
+.script-logo {
+  font-family: var(--font-script);
+  font-size: 2rem;
+  color: var(--accent-gold);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: var(--bg-color);
+    flex-direction: column;
+    justify-content: center;
+    transition: var(--transition);
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .timeline-item, .timeline-item.alt {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+}
