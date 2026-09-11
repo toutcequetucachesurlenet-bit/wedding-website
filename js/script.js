@@ -84,23 +84,54 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  // --- 4. Interactive RSVP Form ---
-  const rsvpForm = document.getElementById('rsvpForm');
-  const formMessage = document.getElementById('formMessage');
+// --- 4. Interactive RSVP Form with Formspree AJAX ---
+const rsvpForm = document.getElementById('rsvpForm');
+const formMessage = document.getElementById('formMessage');
+const submitBtn = document.getElementById('rsvpSubmitBtn');
 
-  if (rsvpForm) {
-    rsvpForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      // Simulate submission UX
-      formMessage.style.color = '#C5A059';
-      formMessage.textContent = "Sending your response...";
+if (rsvpForm) {
+  rsvpForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+    formMessage.style.color = 'var(--accent-gold)';
+    formMessage.textContent = "Submitting your response...";
 
-      setTimeout(() => {
+    const formData = new FormData(rsvpForm);
+
+    try {
+      const response = await fetch(rsvpForm.action, {
+        method: rsvpForm.method,
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        formMessage.style.color = '#27ae60';
         formMessage.textContent = "Thank you! Your RSVP has been successfully received.";
         rsvpForm.reset();
-      }, 1200);
-    });
-  }
+      } else {
+        const data = await response.json();
+        if (Object.hasOwn(data, 'errors')) {
+          formMessage.style.color = '#e74c3c';
+          formMessage.textContent = data["errors"].map(error => error["message"]).join(", ");
+        } else {
+          formMessage.style.color = '#e74c3c';
+          formMessage.textContent = "Oops! There was a problem submitting your RSVP.";
+        }
+      }
+    } catch (error) {
+      formMessage.style.color = '#e74c3c';
+      formMessage.textContent = "Oops! There was a network error submitting your RSVP.";
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Submit RSVP";
+    }
+  });
+}
+
 
 });
