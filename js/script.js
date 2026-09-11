@@ -90,19 +90,23 @@ const formMessage = document.getElementById('formMessage');
 const submitBtn = document.getElementById('rsvpSubmitBtn');
 
 if (rsvpForm) {
-  rsvpForm.addEventListener('submit', async (e) => {
+  rsvpForm.addEventListener('submit', async function (e) {
     e.preventDefault();
-    
-    submitBtn.disabled = true;
-    submitBtn.textContent = "Sending...";
-    formMessage.style.color = 'var(--accent-gold)';
-    formMessage.textContent = "Submitting your response...";
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+    }
+    if (formMessage) {
+      formMessage.style.color = '#d4af37';
+      formMessage.textContent = "Submitting your response...";
+    }
 
     const formData = new FormData(rsvpForm);
 
     try {
-      const response = await fetch(rsvpForm.action, {
-        method: rsvpForm.method,
+      const response = await fetch("https://formspree.io/f/myeyvlnl", {
+        method: "POST",
         body: formData,
         headers: {
           'Accept': 'application/json'
@@ -110,25 +114,28 @@ if (rsvpForm) {
       });
 
       if (response.ok) {
-        formMessage.style.color = '#27ae60';
-        formMessage.textContent = "Thank you! Your RSVP has been successfully received.";
+        if (formMessage) {
+          formMessage.style.color = '#27ae60';
+          formMessage.textContent = "Thank you! Your RSVP has been received.";
+        }
         rsvpForm.reset();
       } else {
         const data = await response.json();
-        if (Object.hasOwn(data, 'errors')) {
+        if (formMessage) {
           formMessage.style.color = '#e74c3c';
-          formMessage.textContent = data["errors"].map(error => error["message"]).join(", ");
-        } else {
-          formMessage.style.color = '#e74c3c';
-          formMessage.textContent = "Oops! There was a problem submitting your RSVP.";
+          formMessage.textContent = data.errors ? data.errors.map(err => err.message).join(", ") : "Submission failed.";
         }
       }
     } catch (error) {
-      formMessage.style.color = '#e74c3c';
-      formMessage.textContent = "Oops! There was a network error submitting your RSVP.";
+      if (formMessage) {
+        formMessage.style.color = '#e74c3c';
+        formMessage.textContent = "Network error. Please try again.";
+      }
     } finally {
-      submitBtn.disabled = false;
-      submitBtn.textContent = "Submit RSVP";
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit RSVP";
+      }
     }
   });
 }
