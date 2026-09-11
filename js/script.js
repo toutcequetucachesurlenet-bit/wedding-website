@@ -120,25 +120,21 @@ if (rsvpForm) {
         }
         rsvpForm.reset();
       } else {
-        const data = await response.json();
-        if (formMessage) {
-          formMessage.style.color = '#e74c3c';
-          formMessage.textContent = data.errors ? data.errors.map(err => err.message).join(", ") : "Submission failed.";
-        }
+        // Fallback: standard HTML form submission if API returns an error
+        rsvpForm.submit();
       }
     } catch (error) {
-      if (formMessage) {
-        formMessage.style.color = '#e74c3c';
-        formMessage.textContent = "Network error. Please try again.";
-      }
+      // Fallback: standard HTML form submission if network fetch fails
+      rsvpForm.submit();
     } finally {
       if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Submit RSVP";
+        if (formMessage && formMessage.textContent.includes("Thank you")) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Submit RSVP";
+        }
       }
     }
   });
 }
-
 
 });
